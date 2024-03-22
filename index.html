@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/7488918404.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/tailwind.css">
+    <title>Document</title>
+</head>
+<body class="h-screen flex items-center justify-center bg-gradient-to-r from-[#9cc6fc] to-[#DCC2FC]">
+       <section class="w-[350px]">
+          <main class="w-full bg-white p-6 rounded-lg shadow-lg">
+             <header class="text-3xl text-center font-bold" id="tittle">Login Form</header>
+             <!-- <input type="checkbox" id="checkbox" class="peer" hidden> -->
+             <label id="Checkbox" class="relative flex duration-300  mt-6 w-full h-12 border rounded-xl after:content-[''] after:absolute after:h-12 after:w-[50%] after:bg-gradient-to-r after:from-[#043674] after:to-[#046ED4] after:rounded-xl after:left-0 after:top-0 after:duration-300">
+               <h1 class="h-12 w-[50%] flex items-center justify-center z-10 text-[18px] select-none font-medium text-white duration-300" id="login">Login</h1>
+               <h1 class="h-12 w-[50%] flex items-center justify-center z-10 text-[18px] select-none font-medium duration-300" id="signup">Signup</h1>
+             </label>
+             <div class=" relative h-[280px] duration-300 overflow-hidden" id="form_box">
+                <form action="#"  class="flex flex-col left-[0%] mt-8 gap-3 w-full absolute duration-300" id="login_form">
+                    <input type="email" placeholder="Email Address" class="h-11 w-full border p-3 placeholder:text-[17px] placeholder:font-normal text-[17px] font-medium outline-none rounded-lg focus:border-b-2" required>
+                   <div class="h-11 relative">
+                        <input type="password" placeholder="Password" class="w-full h-full p-3 outline-none rounded-lg focus:border-b-2 border" required>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <input type="checkbox"  id="checkbox" class="w-[13px] h-[13px]">
+                        <label for="checkbox" class="text-[14px] select-none">Forgotten Paswsword</label>
+                    </div>
+                    <input type="button" value="Login" class="h-11 bg-gradient-to-r from-[#043674] to-[#046ED4] rounded-lg text-white text-[21px] font-medium">
+                   <p class="text-[17px] font-medium items-center flex justify-center gap-2 mt-3" >Welcome back <i class="fa-solid fa-face-laugh text-[30px] text-[#043674]"></i></p>
+             
+                </form>
+                <form action="#"  class="flex flex-col mt-8 gap-3 w-full absolute left-[-100%]  duration-300" id="signup_form">
+                    <input type="text" placeholder="Name" class="h-11 border p-3 placeholder:text-[17px] placeholder:font-normal text-[17px] font-medium outline-none rounded-lg focus:border-b-2" required>
+                    <input type="email" placeholder="Email Address" class="h-11 border p-3 placeholder:text-[17px] placeholder:font-normal text-[17px] font-medium outline-none rounded-lg focus:border-b-2">
+                    <input type="password" placeholder="Password" class="h-11 border p-3 placeholder:text-[17px] placeholder:font-normal text-[17px] font-medium outline-none rounded-lg focus:border-b-2">
+                    <div class="h-11 relative">
+                        <input type="password" placeholder="Confirm Password" class="w-full h-full p-3 outline-none rounded-lg focus:border-b-2 border">
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <input type="checkbox"  id="checkbox_sign" class="w-[13px] h-[13px]">
+                        <label for="checkbox_sign" class="text-[14px] select-none">I accept all terms & condition</label>
+                    </div>
+                    <input type="button" value="Signup" class="h-11 bg-gradient-to-r from-[#043674] to-[#046ED4] rounded-lg text-white text-[21px] font-medium">
+                    <p class="text-[17px] font-medium items-center flex justify-center gap-2 mt-3" >Create a new account <i class="fa-solid fa-face-grin-stars text-[30px] text-[#043674]"></i></p>
+                </form>
+             </div>
+           
+          </main>
+       </section>
+
+
+       <script>
+          let tittle = document.querySelector('#tittle'),
+              login = document.querySelector('#login'),
+              signup = document.querySelector('#signup'),
+              Checkbox = document.querySelector('#Checkbox'),
+              formBox = document.querySelector('#form_box'),
+              loginForm = document.querySelector('#login_form'),
+              signupForm = document.querySelector('#signup_form');
+
+
+              signup.addEventListener('click', () => {
+                tittle.innerHTML = 'Signup Form';
+                login.classList.replace('text-white','text-black');
+                login.classList.add('opacity-50');
+                signup.classList.add('text-white');
+                signup.classList.remove('opacity-50');
+                Checkbox.classList.add('after:left-[100%]');
+                Checkbox.classList.add('after:translate-x-[-100%]');
+                Checkbox.classList.add('after:active:w-[55%]');
+                signupForm.classList.add('left-[0]');
+                loginForm.classList.add('left-[100%]');
+                formBox.classList.add('h-[390px]');
+         });
+
+              login.addEventListener('click', () => {
+                tittle.innerHTML = 'Login Form';
+                login.classList.replace('text-black','text-white');
+                login.classList.remove('opacity-50');
+                signup.classList.remove('text-white');
+                signup.classList.add('opacity-50');
+                Checkbox.classList.remove('after:left-[100%]');
+                Checkbox.classList.remove('after:translate-x-[-100%]');
+                Checkbox.classList.add('after:active:w-[55%]');
+                signupForm.classList.remove('left-[0]');
+                loginForm.classList.remove('left-[100%]');
+                formBox.classList.remove('h-[390px]');
+              
+        });
+
+
+       </script>
+</body>
+</html>
